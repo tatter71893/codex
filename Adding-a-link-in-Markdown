@@ -1,0 +1,45 @@
+To add a link in Markdown, you use a specific combination of brackets and parentheses. Since both your `README.md` and your `Organization.md` are in the same folder (`~/Documents/Notes`), you use what is called a **relative path**.
+
+Here is the exact syntax:
+
+`[Link Text](filename.md)`
+
+### The exact line for your README
+To link your Home Page to your Manual, open your `README.md` and add this line:
+
+**`[View the Organization Guide](Organization.md)`**
+
+---
+
+### How to do it step-by-step in the terminal:
+
+1. **Open your README:**
+   ```bash
+   nano ~/Documents/Notes/README.md
+   ```
+
+2. **Add the link.** I suggest putting it right at the top or in a "Quick Links" section:
+   ```markdown
+   # Nathan's Notes
+   
+   > [!TIP]
+   > New here? Check out the [Organization Guide](Organization.md) to see how this wiki is structured.
+
+   ## Documents
+   ...
+   ```
+
+3. **Save and Exit:** `Ctrl+O`, `Enter`, then `Ctrl+X`.
+
+### How it works (The Programmer's Logic)
+Because you didn't put a full path (like `/home/nate/Documents/...`), you created a **Relative Link**. 
+
+This is crucial for your Git repository because if you ever move the entire `Notes` folder to a different directory or upload it to GitHub, the link won't break. The computer simply looks at where the `README.md` is currently sitting and says, *"Okay, I'm in this folder; now let me look for a file called Organization.md in this same folder."*
+
+### Pro Tip: Linking to files in subfolders
+As you grow your notes, you'll start putting files in folders. To link to those, just add the folder name before the filename:
+
+*   **To link to a script note:** `[Bash Notes](Scripts/bash-notes.md)`
+*   **To link to a Linux command note:** `[Command List](Linux/commands.md)`
+
+Now, your `README.md` acts as the "Router" for your entire knowledge base.
